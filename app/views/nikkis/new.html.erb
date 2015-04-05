@@ -5,6 +5,16 @@
 </div>
 
 <%= form_for @nikki do |f| %>
+  <% if @nikki.errors.any? %>
+    <div class="alert alert-danger">
+      <ul>
+      <% @nikki.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
 <div class="form-group">
   <%= f.label :title, 'タイトル' %>
   <%= f.text_field :title, class: 'form-control' %>
