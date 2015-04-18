@@ -31,7 +31,7 @@ class NikkisController < ApplicationController
   private
 
   def nikki_params
-    params.require(:nikki).permit(:title, :description)
+    params.require(:nikki).permit(:title, :description, :picture, :picture_cache)
   end
 
 end

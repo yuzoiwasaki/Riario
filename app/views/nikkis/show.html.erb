@@ -11,6 +11,14 @@
 <%= simple_format(h(@nikki.description)) %>
 </div>
 
+<div class="col-md-8">
+<% if @nikki.picture? %>
+  <div class="thumbnail">
+    <%= image_tag @nikki.picture.url %>
+  </div>
+<% end %>
+</div>
+
 <div class="col-md-4">
 <%= link_to '日記を消す', nikki_path(@nikki), class: 'btn btn-warning btn-block', method: :delete, data: { confirm: '本当に削除しますか？' } %>
 </div>
