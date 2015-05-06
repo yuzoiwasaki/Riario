@@ -6,7 +6,7 @@ class NikkisController < ApplicationController
   end
 
   def show
-    @nikki = Nikki.find(params[:id])
+    @nikki = current_user.nikkis.find(params[:id])
   end
 
   def new
@@ -23,9 +23,9 @@ class NikkisController < ApplicationController
   end
 
   def destroy
-    @nikki = Nikki.find(params[:id])
-    @nikki.destroy
-    redirect_to root_path
+    @nikki = current_user.nikkis.find(params[:id])
+    @nikki.destroy!
+    redirect_to root_path, notice: '日記を削除しました'
   end
 
   def edit
