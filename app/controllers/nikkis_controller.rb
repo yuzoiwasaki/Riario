@@ -28,6 +28,19 @@ class NikkisController < ApplicationController
     redirect_to root_path
   end
 
+  def edit
+    @nikki = current_user.nikkis.find(params[:id])
+  end
+
+  def update
+    @nikki = current_user.nikkis.find(params[:id])
+    if @nikki.update(nikki_params)
+      redirect_to root_path, notice: '日記が更新されました'
+    else
+      render :edit
+    end
+  end
+
   private
 
   def nikki_params
