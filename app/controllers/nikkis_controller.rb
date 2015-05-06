@@ -1,7 +1,7 @@
 class NikkisController < ApplicationController
 
   def index
-    @nikkis = Nikki.all
+    @nikkis = current_user.nikkis.all
     @nikkis = @nikkis.reverse
   end
 
@@ -10,15 +10,15 @@ class NikkisController < ApplicationController
   end
 
   def new
-    @nikki = Nikki.new
+    @nikki = current_user.nikkis.build
   end
 
   def create
-    @nikki = Nikki.new(nikki_params)
+    @nikki = current_user.nikkis.build(nikki_params)
     if @nikki.save
-      redirect_to @nikki
+      redirect_to root_path, notice: '日記が投稿されました'
     else
-      render 'new'
+      render :new
     end
   end
 
