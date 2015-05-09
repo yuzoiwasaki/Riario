@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150506014427) do
+ActiveRecord::Schema.define(version: 20150509132351) do
 
   create_table "nikkis", force: :cascade do |t|
     t.text     "title",       null: false
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20150506014427) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "admin"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
