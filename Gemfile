@@ -44,6 +44,9 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-doc'
   gem 'pry-stack_explorer'
+  gem 'awesome_print'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
