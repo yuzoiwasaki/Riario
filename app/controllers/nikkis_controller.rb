@@ -1,8 +1,8 @@
 class NikkisController < ApplicationController
+  PER = 10
 
   def index
-    @nikkis = current_user.nikkis.all
-    @nikkis = @nikkis.reverse
+    @nikkis = Nikki.page(params[:page]).per(PER).order("created_at DESC")
   end
 
   def show
