@@ -14,7 +14,7 @@
       <tr>
         <td><%= nikki.created_at.strftime("%Y-%m-%d") %></td>
         <td><%= link_to nikki.title, nikki_path(nikki) %></td>
-        <td><%= nikki.description %></td>
+        <td><%= limit_length(nikki.description, 50) %></td>
       </tr>  
     <% end %>
   </tbody>
