@@ -13,30 +13,3 @@
  *= require_tree .
  *= require_self
  */
-.navbar-brand {
-	font-family: cursive;
-}
-table.contents {
-  border-collapse: separate;
-  border-spacing: 0px 15px;
-  font-size: 15px;
-}
-table.contents th,
-table.contents td {
-  padding: 10px;
-}
-table.contents th {
-  background: #008697;
-  vertical-align: middle;
-  text-align: left;
-  width: 100px;
-  overflow: visible;
-  position: relative;
-  color: #fff;
-  font-weight: normal;
-}
-table.contents td {
-  background: #f8f8f8;
-  width: 400px;
-  padding-left: 20px;
-}
