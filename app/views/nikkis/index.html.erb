@@ -10,11 +10,14 @@
 <div class="col-md-8">
 <table class="table table-striped">
   <tbody>
+    <th>日付</th>
+    <th>タイトル</th>
+    <th>本文</th>
     <% @nikkis.each do |nikki| %>
       <tr>
         <td><%= nikki.created_at.strftime("%Y-%m-%d") %></td>
         <td><%= link_to nikki.title, nikki_path(nikki) %></td>
-        <td><%= limit_length(nikki.description, 50) %></td>
+        <td><%= limit_length(nikki.description, 30) %></td>
       </tr>  
     <% end %>
   </tbody>
