@@ -24,6 +24,7 @@
   <%= f.label :description, '本文' %>
   <%= f.text_area :description, class: 'form-control', :size => '40x15' %>
 </div>
+<br />
 
 <div class="form-group">
   <% if @nikki.picture? %>
@@ -34,6 +35,7 @@
   <%= f.file_field :picture %>
   <%= f.hidden_field :picture_cache %>
 </div>
+<br />
 
 </div>
 </div>
