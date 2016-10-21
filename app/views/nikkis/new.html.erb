@@ -1,48 +1,48 @@
 <div class="row">
-<div class="col-md-8">
-<div class="page-header">
-  <h1><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 日記を書く</h1>
-</div>
+  <div class="col-md-8">
+    <div class="page-header">
+      <h1><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 日記を書く</h1>
+    </div>
 
-<%= form_for @nikki do |f| %>
-  <% if @nikki.errors.any? %>
-    <div class="alert alert-danger">
-      <ul>
-      <% @nikki.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+    <%= form_for @nikki do |f| %>
+      <% if @nikki.errors.any? %>
+        <div class="alert alert-danger">
+          <ul>
+            <% @nikki.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-<div class="form-group">
-  <%= f.label :title, 'タイトル' %>
-  <%= f.text_field :title, class: 'form-control' %>
-</div>
+      <div class="form-group">
+        <%= f.label :title, 'タイトル' %>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
 
-<div class="form-group">
-  <%= f.label :description, '本文' %>
-  <%= f.text_area :description, class: 'form-control', :size => '40x15' %>
-</div>
-<br />
+      <div class="form-group">
+        <%= f.label :description, '本文' %>
+        <%= f.text_area :description, class: 'form-control', :size => '40x15' %>
+      </div>
+      <br />
 
-<div class="form-group">
-  <% if @nikki.picture? %>
-    <div class="thumbnail">
-      <%= image_tag @nikki.picture.url %>
-    </div>
-  <% end %>
-  <%= f.file_field :picture %>
-  <%= f.hidden_field :picture_cache %>
-</div>
-<br />
+      <div class="form-group">
+        <% if @nikki.picture? %>
+          <div class="thumbnail">
+            <%= image_tag @nikki.picture.url %>
+          </div>
+        <% end %>
+        <%= f.file_field :picture %>
+        <%= f.hidden_field :picture_cache %>
+      </div>
+      <br />
 
-</div>
-</div>
+      <div class="row">
+        <div class="col-md-4">
+          <%= f.submit '投稿する', class: 'btn btn-success btn-block' %>
+        </div>
+      </div>
+    <% end %>
 
-<div class="row">
-<div class="col-md-2">
-<%= f.submit '投稿する', class: 'btn btn-success btn-block' %>
-<% end %>
-</div>
+  </div>
 </div>

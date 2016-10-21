@@ -1,26 +1,26 @@
 <div class="row">
-<div class="col-md-8">
-<div class="page-header">
-  <h1><%= @nikki.title %></h1>
-</div>
-</div>
+  <div class="col-md-8">
+    <div class="page-header">
+      <h1><%= @nikki.title %></h1>
+    </div>
+  </div>
 </div>
 
 <div class="row">
-<div class="col-md-8">
-<%= simple_format(h(@nikki.description)) %>
-</div>
-
-<div class="col-md-8">
-<% if @nikki.picture? %>
-  <div class="thumbnail">
-    <%= image_tag @nikki.picture.url %>
+  <div class="col-md-8">
+    <%= simple_format(h(@nikki.description)) %>
   </div>
-<% end %>
-</div>
 
-<div class="col-md-4">
-<%= link_to '日記を編集する', edit_nikki_path(@nikki), class: 'btn btn-info btn-block' %>
-<%= link_to '日記を消す', nikki_path(@nikki), class: 'btn btn-warning btn-block', method: :delete, data: { confirm: '本当に削除しますか？' } %>
-</div>
+  <% if @nikki.picture? %>
+    <div class="col-md-8">
+      <div class="thumbnail">
+        <%= image_tag @nikki.picture.url %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="col-md-4">
+    <%= link_to '日記を編集する', edit_nikki_path(@nikki), class: 'btn btn-info btn-block' %>
+    <%= link_to '日記を消す', nikki_path(@nikki), class: 'btn btn-warning btn-block', method: :delete, data: { confirm: '本当に削除しますか？' } %>
+  </div>
 </div>
