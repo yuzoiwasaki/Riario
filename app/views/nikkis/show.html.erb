@@ -11,10 +11,12 @@
     <%= simple_format(h(@nikki.description)) %>
   </div>
 
-  <div class="col-md-4">
-    <%= link_to '日記を編集する', edit_nikki_path(@nikki), class: 'btn btn-info btn-block' %>
-    <%= link_to '日記を消す', nikki_path(@nikki), class: 'btn btn-warning btn-block', method: :delete, data: { confirm: '本当に削除しますか？' } %>
-  </div>
+  <% if current_user.nikkis.find_by(id: @nikki.id) %>
+    <div class="col-md-4">
+      <%= link_to '日記を編集する', edit_nikki_path(@nikki), class: 'btn btn-info btn-block' %>
+      <%= link_to '日記を消す', nikki_path(@nikki), class: 'btn btn-warning btn-block', method: :delete, data: { confirm: '本当に削除しますか？' } %>
+    </div>
+  <% end %>
 
   <% if @nikki.picture? %>
     <div class="col-md-8">

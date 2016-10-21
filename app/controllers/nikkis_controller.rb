@@ -6,7 +6,7 @@ class NikkisController < ApplicationController
   end
 
   def show
-    @nikki = current_user.nikkis.find(params[:id])
+    @nikki = Nikki.find_by(id: params[:id])
   end
 
   def new
