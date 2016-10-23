@@ -17,3 +17,7 @@
 body {
   word-break: break-all;
 }
+div.devise-error {
+  height: 92px;
+  width: 482px;
+}

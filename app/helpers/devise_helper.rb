@@ -7,12 +7,14 @@ module DeviseHelper
       errmsg += "<li>#{msg}</li>"
     end
     html += <<-EOF
+    <div class="devise-error">
       <div class="alert alert-danger">
         <ul>
           #{errmsg}
         </ul>
       </div>
-      EOF
+    </div>
+    EOF
     html.html_safe
   end
 end
