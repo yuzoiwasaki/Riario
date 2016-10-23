@@ -39,4 +39,13 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.smtp_settings = {
+    :enable_starttls_auto => true,
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => 'smtp.gmail.com',
+    :user_name => "xxxxxxx@gmail.com", #gmailアドレス
+    :password => "xxxxxxxxxxx", #gmailパスワード
+    :authentication => 'login',
+  }
 end
