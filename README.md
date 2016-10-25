@@ -2,11 +2,28 @@
 ソーシャル日記サービス
 
 ## 使い方
-```sh
-./bin/bundle install
-./bin/rake db:create
-./bin/rake db:migrate
-./bin/rails s
+
+### 各種gemのインストール
+```
+$ bundle install
+```
+
+### データベースのセットアップ
+```
+$ rake db:create
+$ rake db:migrate
+```
+
+### メール送信用gmail設定
+
+gmailアカウントとパスワードを置き換える。
+```
+$ vim config/settings.yml
+```
+
+### アプリケーションの起動
+```
+$ rails s
 ```
 
 ブラウザで以下にアクセスします。
