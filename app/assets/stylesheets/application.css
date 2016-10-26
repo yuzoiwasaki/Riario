@@ -21,3 +21,21 @@ div.devise-error {
   height: 92px;
   width: 350px;
 }
+.btn.btn-success {
+  background-color: #8b0000;
+}
+.btn.btn-info {
+  background-color: #556b2f;
+}
+.btn.btn-warning {
+  background-color: #ffa500;
+}
+.btn.btn-success:hover {
+  opacity: 0.8;
+}
+.btn.btn-info:hover {
+  opacity: 0.8;
+}
+.btn.btn-warning:hover {
+  opacity: 0.8;
+}
