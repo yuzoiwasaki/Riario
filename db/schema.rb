@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161026103340) do
+ActiveRecord::Schema.define(version: 20161026114807) do
 
   create_table "nikkis", force: :cascade do |t|
     t.text     "title",       null: false
