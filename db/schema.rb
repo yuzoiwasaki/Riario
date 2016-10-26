@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150509132351) do
+ActiveRecord::Schema.define(version: 20161026103340) do
 
   create_table "nikkis", force: :cascade do |t|
     t.text     "title",       null: false
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20150509132351) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "admin"
+    t.string   "username"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
